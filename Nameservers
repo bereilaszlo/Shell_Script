@@ -4,10 +4,9 @@ NAMESERVERS=("google-public-dns-a.google.com" "google-public-dns-b.google.com" "
 
 tLen=${#NAMESERVERS[@]}
 declare -a dns
-
-for (( i=0; i<${tLen}; i++));
+for (( i=0; i<${tLen}; i++ ));
 do 
- ping -c1 -q ${NAMESERVERS[$i]} >/dev/null && dns[$i] ='ok'
+  ping -c1 -q ${NAMESERVERS[$i]} >/dev/null && dns[$i]='ok'
 done
 
 for name in ${dns[@]};
